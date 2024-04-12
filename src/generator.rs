@@ -14,6 +14,13 @@ pub fn gen_password() -> Result<()> {
     Ok(())
 }
 
+pub fn gen_line(pass_length: String, excluded: String) -> Result<()> {
+    let gen_result = generator(pass_length, excluded).expect("Failed to generate password");
+    println!("{}", gen_result);
+
+    Ok(())
+}
+
 // User input function
 fn get_user_input(prompt: &str) -> Result<String> {
     println!("{}", prompt);
@@ -25,7 +32,7 @@ fn get_user_input(prompt: &str) -> Result<String> {
 // Generator function
 // User input allows custom charset definition
 // Puncuation is already omitted
-fn generator(pass_length: String, excluded: String) -> Result<String> {
+pub fn generator(pass_length: String, excluded: String) -> Result<String> {
     // takes about a minute on my machine to generate 100,000,000 characters
     // single thread - on Intel i9 chip
     let mut counter = 0;
