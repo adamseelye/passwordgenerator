@@ -7,7 +7,7 @@ use crate::generator::{gen_password, gen_line};
 
 fn main() {
     let matches = App::new("Password Generator")
-        .version("1.0.0")
+        .version("1.0.1")
         .author("Adam Seelye")
         .about("Password Generator")
         .subcommand(
