@@ -43,7 +43,7 @@ pub fn generator(pass_length: String, excluded: String) -> Result<String> {
 
     let mut charset: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                            abcdefghijklmnopqrstuvwxyz\
-                           0123456789)(][}{_=+?/*&^%$#@!~".to_string();
+                           0123456789)(][}{_=+?/*&^%$#@!~`-><\"\'.".to_string();
 
     while counter < excluded.len() {
         counter += 1;
