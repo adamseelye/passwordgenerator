@@ -33,8 +33,6 @@ fn get_user_input(prompt: &str) -> Result<String> {
 // User input allows custom charset definition
 // Puncuation is already omitted
 pub fn generator(pass_length: String, excluded: String) -> Result<String> {
-    // takes about a minute on my machine to generate 100,000,000 characters
-    // single thread - on Intel i9 chip
     let mut counter = 0;
     let mut chars: Vec<char> = excluded.chars().collect();
 
@@ -43,7 +41,7 @@ pub fn generator(pass_length: String, excluded: String) -> Result<String> {
 
     let mut charset: String = "ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                            abcdefghijklmnopqrstuvwxyz\
-                           0123456789)(][}{_=+?/*&^%$#@!~`-><\"\'.".to_string();
+                           0123456789)(][}{_=+?/*&^%$#@!~`-><\\\"\'.".to_string();
 
     while counter < excluded.len() {
         counter += 1;
